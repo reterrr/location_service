@@ -1,0 +1,4 @@
+.idea
+src/generated
+cmake-build-debug
+CMakeFiles

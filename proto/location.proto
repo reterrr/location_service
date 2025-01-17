@@ -36,5 +36,5 @@ service LocationService {
 
     rpc get (GetLocationRequest) returns (GetLocationResponse);
 
-    rpc getLocations (GetLocationsRequest) returns (GetLocationsRequest);
+    rpc getLocations (GetLocationsRequest) returns (LocationsResponse);
 }

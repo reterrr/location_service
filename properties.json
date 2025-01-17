@@ -1,0 +1,8 @@
+{
+  "db": {
+    "connection-string": "host=location-postgres port=5432 dbname=locations user=postgres password=12345678"
+  },
+  "server": {
+    "address": "0.0.0.0:9090"
+  }
+}
