@@ -14,7 +14,6 @@ grpc::Status GrcServer::get(grpc::ServerContext *context,
                             GetLocationResponse *response) {
     uint64_t id = request->id();
     auto result = work->exec("SELECT * FROM cities WHERE id = " + std::to_string(id));
-    work->commit();
 
     if (result.empty()) {
         return {grpc::StatusCode::NOT_FOUND, "Location not found"};
@@ -95,7 +94,7 @@ grpc::Status GrcServer::search(grpc::ServerContext *context,
         double lat = request.pattern_latitude();
         double lon = request.pattern_longitude();
 
-       auto builder = SearchLocationQueryBuilder(name, country, lat, lon);
+        auto builder = SearchLocationQueryBuilder(name, country, lat, lon);
 
         auto rows =
                 work->exec(builder.build());
